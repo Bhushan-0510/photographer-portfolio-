@@ -452,10 +452,10 @@
                 
             }
             .hero h1 , .hero h4 ,.hero p{
-                color: rgb(125,110,231);
+                color: black;
             }
             .base {
-                background-color: black;
+                background-color: rgba(255, 255, 255, 0.8);
                 padding: 15px;
                 border-radius: 15px;
             }
