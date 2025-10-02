@@ -449,6 +449,10 @@
                 background-image: url(main-p.png);
                 background-size: cover;
                 color: white;
+                
+            }
+            .hero h1 , h4 , p{
+                color: white;
             }
             .hero-buttons {
                 flex-wrap: wrap;
