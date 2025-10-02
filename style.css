@@ -443,7 +443,7 @@
         }
 
         /* For very small screens where buttons might still wrap */
-        @media (max-width: 380px) {
+        @media (max-width: 400px) {
 
             .hero{
                 background-image: url(main-p.png);
