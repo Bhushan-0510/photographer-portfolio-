@@ -454,6 +454,11 @@
             .hero h1 , .hero h4 ,.hero p{
                 color: rgb(125,110,231);
             }
+            .base {
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 15px;
+                border-radius: 15px;
+            }
             .hero-buttons {
                 flex-wrap: wrap;
                 gap: 0.5rem;
