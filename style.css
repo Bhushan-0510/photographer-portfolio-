@@ -453,7 +453,7 @@
             }
             .hero h1 , .hero h4 ,.hero p{
                 color: black;
-                text-align: start;
+                text-align: left;
             }
             .base {
                 background-color: rgba(255, 255, 255, 0.8);
