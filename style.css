@@ -451,7 +451,7 @@
                 color: white;
                 
             }
-            .hero h1 , h4 , p{
+            .hero h1 , .hero h4 ,.hero p{
                 color: white;
             }
             .hero-buttons {
