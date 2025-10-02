@@ -448,11 +448,11 @@
             .hero{
                 background-image: url(main-p.png);
                 background-size: cover;
-                color: white;
+                color: rgb(125,110,231);
                 
             }
             .hero h1 , .hero h4 ,.hero p{
-                color: white;
+                color: rgb(125,110,231);
             }
             .hero-buttons {
                 flex-wrap: wrap;
