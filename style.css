@@ -20,14 +20,14 @@ body {
 .logo {
     font-size: 2rem;
     font-weight: 1000;
-    color: rgb(10, 9, 10);
+    color: var(--secondary-color);
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .logo:hover {
     color: var(--base-color);
     transform: scale(1.2);
-    transition: all 0.3s ease;
     cursor: pointer;
 }
 
@@ -35,12 +35,12 @@ body {
     font-size: 1.2rem;
     font-weight: 900;
     color: rgb(184, 186, 186) !important;
+    transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
     color: var(--base-color) !important;
     transform: scale(1.2);
-    transition: all 0.3s ease;
     cursor: pointer;
 }
 
@@ -50,9 +50,6 @@ body {
 
 .navbar-nav .nav-link.nav-link-1:hover {
     color: #333 !important;
-    transform: scale(1.2);
-    transition: all 0.3s ease;
-    cursor: pointer;
 }
 
 .navbar {
@@ -63,31 +60,119 @@ body {
 
 /* Hero Section */
 .hero {
-    background-image: url('your-background-image.jpg'); /* Use your attached image */
+    background-image: url('Gemini.jpg');
     background-size: cover;
     background-position: left center;
     min-height: 100vh;
+    position: relative; /* Ensure absolute children are contained */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 50px;
+}
+
+.hero .container {
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    min-height: 100vh;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    z-index: 2; /* Content above images */
+}
+
+.hero-imgs-bg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     display: flex;
     align-items: flex-end;
-    padding: 100px 0 50px;
-    position: relative;
+    z-index: 0; /* Images behind content */
+    pointer-events: none;
+    gap: 20px;
+    height: calc(100vh - 100px); /* Desktop default */
 }
 
-.hero .container,
-.hero .row {
+.hero-imgs-bg .img-1 {
+    height: 50%;
+    width: auto;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.hero-imgs-bg .img-2 {
     height: 100%;
-    min-height: calc(100vh - 100px); /* 100px = navbar height */
+    width: auto;
+    object-fit: contain;
 }
 
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+        text-align: center;
+        padding-top: 80px;
+        padding-bottom: 30px;
+    }
+    .hero-content {
+        min-height: 100vh;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        z-index: 2;
+    }
+    .hero-imgs-bg {
+        position: absolute;
+        bottom: 80px; /* Lift images up below navbar */
+        right: 0;
+        height: 80vh;
+        gap: 6px;
+        z-index: 0;
+    }
+    .hero-imgs-bg .img-1 {
+        height: 30vh;
+        margin-right: 4px;
+    }
+    .hero-imgs-bg .img-2 {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        min-height: 100vh;
+        padding-top: 60px;
+        padding-bottom: 20px;
+    }
+    .hero-content {
+        min-height: 100vh;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        z-index: 2;
+    }
+    .hero-imgs-bg {
+        position: absolute;
+        bottom: 80px; /* Lift images up below navbar */
+        right: 0;
+        height: 60vh;
+        gap: 2px;
+        z-index: 0;
+    }
+}
 .content {
     color: var(--secondary-color);
 }
 
-/* Hero Buttons Container */
+/* Hero Buttons */
 .hero-buttons {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .btn-1,
@@ -99,9 +184,9 @@ body {
     padding: 10px 20px;
     font-size: 1.2rem;
     font-weight: bold;
-    /* display: inline-block; */
     text-align: center;
     min-width: 140px;
+    transition: all 0.3s ease;
 }
 
 .btn-1:hover,
@@ -109,7 +194,6 @@ body {
     background-color: transparent;
     color: var(--base-color);
     transform: scale(1.1);
-    transition: all 0.3s ease;
     cursor: pointer;
 }
 
@@ -160,12 +244,10 @@ body {
     padding: 10px 20px;
     font-size: 1.2rem;
     font-weight: bold;
-    /* display: inline-block; */
     text-align: center;
     min-width: 140px;
-    transition: color 0.3s, border-color 0.3s, transform 0.3s;
+    transition: all 0.3s, color 0.3s, border-color 0.3s;
     display: inline-block;
-    /* This enables transform! */
 }
 
 .btn-3:hover,
@@ -173,14 +255,11 @@ body {
     background-color: transparent;
     color: var(--base-color);
     transform: scale(1.1);
-    transition: all 0.3s ease;
     cursor: pointer;
-    /* transform: scale(1.07); */
 }
 
 /* Services Section */
 .hero-3 {
-    /* background-image: url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1938&q=80"); */
     background-color: rgb(248, 248, 248);
     background-size: cover;
     padding: 80px 0;
@@ -219,12 +298,12 @@ body {
     text-decoration: none;
     color: var(--base-color);
     font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .more:hover {
     color: #333;
     transform: scale(1.1);
-    transition: all 0.3s ease;
     cursor: pointer;
 }
 
@@ -234,8 +313,6 @@ body {
     background-color: white;
 }
 
-/* Portfolio Gallery */
-/* --- Portfolio Grid --- */
 .hero-4 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -256,7 +333,7 @@ body {
     transform: scale(1.05);
 }
 
-/* --- Lightbox --- */
+/* Lightbox */
 .lightbox {
     display: none;
     position: fixed;
@@ -274,16 +351,21 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     opacity: 0;
-    transform: translateY(30px);
+    transform: scale(0.8);
     transition: all 0.4s ease;
 }
 
 .lightbox img.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
 }
 
-/* --- Controls --- */
+.lightbox img.fade-out {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Lightbox Controls */
 .close,
 .prev,
 .next {
@@ -294,9 +376,9 @@ body {
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
-    transition: background 0.3s;
     color: black;
     z-index: 2100;
+    transition: background 0.3s;
 }
 
 .close {
@@ -323,38 +405,12 @@ body {
     background: white;
 }
 
-/* Enlarged image with animation */
-.lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.4s ease;
-}
-
-.lightbox img.active {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.lightbox img.fade-out {
-    opacity: 0;
-    transform: scale(0.8);
-}
-
-
+/* Contact Section */
 .hero-5 {
     background-color: rgb(248, 248, 248);
     min-height: 100vh;
-    min-width: auto;
     display: flex;
     padding: 90px 0 50px;
-}
-
-.hero-5 a {
-    /* color: var(--base-color); */
 }
 
 .contdet {
@@ -362,254 +418,71 @@ body {
     text-decoration: none;
     color: var(--secondary-color);
     font-weight: 600;
-
+    transition: all 0.3s ease, font-size 0.3s;
 }
 
 .contdet:hover {
     color: var(--base-color);
     transform: scale(1.2);
-    transition: all 0.3s ease, font-size 0.3s;
+    font-size: 2.2rem;
+    font-weight: 800;
     cursor: pointer;
-    font-size: 2.2rem; /* Make it appear bigger */
-    font-weight: 800;   /* Optional: make it bolder */
 }
 
-/* Mobile Responsive Styles */
+/* Only keep custom responsive tweaks not covered by Bootstrap */
 @media (max-width: 768px) {
-
-    /* Navigation */
-    .navbar-collapse {
-        background-color: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 1rem;
-        border-radius: 10px;
-        margin-top: 10px;
-    }
-
-    /* Hero Section - Fixed Button Alignment */
     .hero {
-        text-align: center;
-        padding: 150px 0 50px;
         min-height: 100vh;
+        text-align: start;
+        padding-top: 80px; /* Reduced top margin for mobile */
+        padding-bottom: 30px;
     }
-
-    .hero-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 0.8rem;
-        flex-wrap: nowrap;
+    .hero-content {
+        min-height: 100vh;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        z-index: 2;
     }
-
-    .btn-1,
-    .btn-2 {
-        flex: 0 1 auto;
-        min-width: 150px;
-        padding: 12px 20px;
-        font-size: 1.1rem;
-        margin: 0;
+    .hero-imgs-bg {
+        position: absolute;
+        bottom: 80px; /* Lift images up below navbar */
+        right: 0;
+        height: 80vh;
+        gap: 6px;
+        z-index: 0;
     }
-
-    /* About Section */
-    .cotimg {
-        margin-top: 30px;
-        max-width: 100%;
-        height: auto;
-    }
-
-    .ckbtn {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .btn-3,
-    .btn-4 {
-        margin-bottom: 10px;
-    }
-
-    /* Services Section */
-    .card:hover {
-        transform: none;
-        /* Disable hover effect on mobile */
-    }
-
-    .card img {
-        width: 50px;
-        height: 50px;
-    }
-
-    /* Text adjustments */
-    h1.display-5 {
-        font-size: 2rem !important;
-    }
-
-    h3 {
-        font-size: 1.2rem !important;
-    }
-
-    .ullist {
-        font-size: 1rem;
-        line-height: 2rem;
+    .img-2{
+        height: 60vh;
     }
 }
 
 @media (max-width: 576px) {
-
-    /* Extra small devices */
-    .logo {
-        font-size: 1.5rem;
-    }
-
     .hero {
-        padding: 120px 0 30px;
+        min-height: 100vh;
+        padding-top: 30px; /* Further reduced for very small screens */
+        padding-bottom: 20px;
     }
 
-    /* Hero Buttons for very small screens */
-    .hero-buttons {
-        flex-direction: row;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-
-    .btn-1,
-    .btn-2 {
-        font-size: 1rem;
-        padding: 10px 16px;
-        min-width: 130px;
-    }
-
-    .btn-3,
-    .btn-4 {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-
-    .card {
-        padding: 1rem;
-    }
-
-    .card img {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-/* For very small screens where buttons might still wrap */
-@media (max-width: 450px) {
-
-    .hero {
-        background-image: url(main-p.png);
-        background-size: cover;
-        color: rgb(125, 110, 231);
-
-    }
-
-    .hero h1,
-    .hero h4,
-    .hero p {
-        color: black;
-        text-align: left;
-    }
-
-    .base {
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 15px;
+    .bb{
+        border: 2px ;
         border-radius: 15px;
+        background-color: whitesmoke;
+        z-index: 2;
+        padding: 15px;
+        margin-bottom: 20px;
     }
-
-    .hero-buttons {
-        flex-wrap: wrap;
-        gap: 0.5rem;
+    .hero-content {
+        min-height: 100vh;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        z-index: 2;
     }
-
-    .btn-1,
-    .btn-2 {
-        min-width: 120px;
-        font-size: 0.9rem;
-        padding: 8px 12px;
-    }
-}
-
-/* Large screens optimization */
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1140px;
-    }
-
-    .hero {
-        background-position: center;
-
-    }
-}
-
-.hero-img {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: flex-end;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 0;
-}
-
-.hero-img img {
-    max-height: 250px;
-    width: auto;
-    object-fit: contain;
-}
-
-.hero-img img.img-1 {
-    max-height: 125px; /* base height */
-}
-
-.hero-img img.img-2 {
-    max-height: 250px; /* double the height of img-1 */
-}
-
-@media (max-width: 768px) {
-    .hero-img img.img-1 {
-        max-height: 80px;
-    }
-    .hero-img img.img-2 {
-        max-height: 160px;
-    }
-}
-
-.hero-imgs {
-    display: flex;
-    flex-direction: row;         /* Place images side by side */
-    align-items: flex-end;       /* Align both images to the bottom */
-    justify-content: flex-end;
-    height: calc(100vh - 100px); /* 100px = navbar height */
-    position: relative;
-    width: auto;
-    gap: 20px;
-}
-
-.hero-imgs .img-1 {
-    height: 50%;
-    width: auto;
-    object-fit: contain;
-    display: block;
-    margin-bottom: 0;
-}
-
-.hero-imgs .img-2 {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .hero-imgs {
-        height: calc(60vh - 80px);
-        gap: 10px;
-        flex-direction: row;
-    }
-    .hero-imgs .img-2 {
-        height: 100%;
-    }
-    .hero-imgs .img-1 {
-        height: 50%;
+    .hero-imgs-bg {
+        position: absolute;
+        bottom: 120px; /* Lift images up below navbar */
+        right: 0;
+        height: 80vh;
+        gap: 2px;
+        z-index: 0;
     }
 }
