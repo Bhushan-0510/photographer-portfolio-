@@ -479,7 +479,7 @@ body {
     }
     .hero-imgs-bg {
         position: absolute;
-        bottom: 120px; /* Lift images up below navbar */
+        bottom: 180px; /* Lift images up below navbar */
         right: 0;
         height: 80vh;
         gap: 2px;
