@@ -63,12 +63,20 @@ body {
 
 /* Hero Section */
 .hero {
-    background-image: url(Gemini_Generated_Image_6v6qwr6v6qwr6v6q.png);
-    min-height: 100vh;
+    background-image: url('your-background-image.jpg'); /* Use your attached image */
     background-size: cover;
+    background-position: left center;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     padding: 100px 0 50px;
+    position: relative;
+}
+
+.hero .container,
+.hero .row {
+    height: 100%;
+    min-height: calc(100vh - 100px); /* 100px = navbar height */
 }
 
 .content {
@@ -530,5 +538,78 @@ body {
     .hero {
         background-position: center;
 
+    }
+}
+
+.hero-img {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-end;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.hero-img img {
+    max-height: 250px;
+    width: auto;
+    object-fit: contain;
+}
+
+.hero-img img.img-1 {
+    max-height: 125px; /* base height */
+}
+
+.hero-img img.img-2 {
+    max-height: 250px; /* double the height of img-1 */
+}
+
+@media (max-width: 768px) {
+    .hero-img img.img-1 {
+        max-height: 80px;
+    }
+    .hero-img img.img-2 {
+        max-height: 160px;
+    }
+}
+
+.hero-imgs {
+    display: flex;
+    flex-direction: row;         /* Place images side by side */
+    align-items: flex-end;       /* Align both images to the bottom */
+    justify-content: flex-end;
+    height: calc(100vh - 100px); /* 100px = navbar height */
+    position: relative;
+    width: auto;
+    gap: 20px;
+}
+
+.hero-imgs .img-1 {
+    height: 50%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 0;
+}
+
+.hero-imgs .img-2 {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .hero-imgs {
+        height: calc(60vh - 80px);
+        gap: 10px;
+        flex-direction: row;
+    }
+    .hero-imgs .img-2 {
+        height: 100%;
+    }
+    .hero-imgs .img-1 {
+        height: 50%;
     }
 }
