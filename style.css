@@ -168,6 +168,7 @@
         /* Services Section */
         .hero-3 {
             /* background-image: url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1938&q=80"); */
+            background-color: rgb(248,248,248);
             background-size: cover;
             padding: 80px 0;
         }
@@ -217,7 +218,7 @@
         /* Portfolio Section */
         .hero-4 {
             padding: 80px 0;
-            background-color: #f8f9fa;
+            background-color: white;
         }
 
 /* Portfolio Gallery */
@@ -327,9 +328,21 @@
 }
 
 
-
+.hero-5{
+    background-color: rgb(248,248,248);
+    min-height: 100vh;
+    display: flex;
+    padding: 90px 0 50px;
+}
+.hero-5 h2{
+    /* color: var(--base-color); */
+}
         
-
+.contdet{
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
         /* Mobile Responsive Styles */
         @media (max-width: 768px) {
             /* Navigation */
