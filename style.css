@@ -274,7 +274,7 @@ body {
     background-color: transparent;
     color: var(--base-color);
     transition: 0.6s!important;
-    transform: scale(1.2)!important;
+    transform: scale(1.9)!important;
     cursor: pointer;
 }
 
@@ -350,7 +350,11 @@ body {
 }
 
 .hero-4 .gallery img:hover {
-    transform: scale(1.05);
+    /* transform: scale(1.0)!important; */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.6s!important;
+    transform: scale(1.06)!important;
 }
 
 /* Lightbox */
@@ -398,7 +402,7 @@ body {
     border-radius: 50%;
     color: black;
     z-index: 2100;
-    transition: background 0.3s;
+    transition: background 0.3s ease;
 }
 
 .close {
@@ -446,7 +450,7 @@ body {
     font-size: 2.2rem;
     font-weight: 800;
     cursor: pointer;
-    transition: 1s!important;
+   transition: 0.6s!important;
     transform: scale(1.2)!important;
 
 }
