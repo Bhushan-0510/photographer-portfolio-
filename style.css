@@ -443,10 +443,12 @@ body {
 
 .contdet:hover {
     color: var(--base-color);
-    transform: scale(1.2);
     font-size: 2.2rem;
     font-weight: 800;
     cursor: pointer;
+    transition: 1s!important;
+    transform: scale(1.2)!important;
+
 }
 
 /* Only keep custom responsive tweaks not covered by Bootstrap */
