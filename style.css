@@ -34,7 +34,7 @@ body {
 .navbar-nav .nav-link {
     font-size: 1.2rem;
     font-weight: 900;
-    color: rgb(184, 186, 186) !important;
+    color: rgb(10,9,10) !important;
     transition: all 0.3s ease;
 }
 
@@ -45,6 +45,8 @@ body {
 }
 
 .navbar-nav .nav-link.nav-link-1 {
+    /* font-weight: bolder; */
+    /* font-size: 1.6rem; */
     color: var(--base-color) !important;
 }
 
@@ -206,9 +208,13 @@ body {
 .btn-2:hover {
     background-color: transparent;
     color: var(--base-color);
-    transform: scale(1.1);
     cursor: pointer;
+   transition: 0.6s!important;
+    transform: scale(1.2)!important;
+
+    
 }
+
 
 /* About Section */
 .hero-2 {
@@ -267,7 +273,8 @@ body {
 .btn-4:hover {
     background-color: transparent;
     color: var(--base-color);
-    transform: scale(1.1);
+    transition: 0.6s!important;
+    transform: scale(1.2)!important;
     cursor: pointer;
 }
 
@@ -508,3 +515,6 @@ body {
         z-index: 0;
     }
 }
+
+
+
