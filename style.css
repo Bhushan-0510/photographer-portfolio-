@@ -8,6 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    
 }
 
 body {
@@ -205,12 +206,13 @@ body {
 .btn-2:hover {
     background-color: transparent;
     color: var(--base-color);
-    cursor: pointer;
-   transition: 0.6s!important;
-    transform: scale(1.2)!important;
+    transition: 0.6s !important;
+    transform: scale(1.2) !important;
 
-    
+
+ cursor: url('lights.png'), pointer;
 }
+
 
 
 /* About Section */
@@ -272,7 +274,7 @@ body {
     color: var(--base-color);
     transition: 0.6s!important;
     transform: scale(1.2)!important;
-    cursor: pointer;
+    cursor: url('camera.png'), pointer;
 }
 
 /* Services Section */
@@ -449,6 +451,7 @@ body {
     cursor: pointer;
    transition: 0.6s!important;
     transform: scale(1.2)!important;
+    /* cursor: url('phone.png'), pointer; */
 
 }
 
